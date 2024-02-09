@@ -58,11 +58,7 @@ resource "azurerm_linux_virtual_machine" "velo_byol" {
   admin_password      = var.admin_password
   zone                = var.zone
 
-  admin_ssh_key {
-    username   = var.admin_username
-    public_key = file("azure-key.pub")
-  }
-  
+   
   disable_password_authentication = false
   network_interface_ids = [
     azurerm_network_interface.public.id,
